@@ -2,15 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    【秒杀详细表】
+-->
 <mapper namespace="org.seckill.dao.KilledInfoDao">
-
+    <!--【插入秒杀信息】-->
     <insert id="insertKilledInfo">
-        <!-- 主键冲突时，该SQL语句会报错，为了使其不报错，添加ignore字段
-            但ignore字段只忽略主键冲突的报错，其他SQL语法错误还是会报错-->
-        INSERT IGNORE INTO killed_info(product_id, user_phone, state)
-        VALUES (#{product_id}, #{user_phone}, 0);
+        INSERT IGNORE
+            INTO killed_info(product_id, user_phone, state)
+            VALUES (#{product_id}, #{user_phone}, 0);
     </insert>
 
+    <!--【根据库存id查询对应的秒杀信息】-->
     <select id="queryById" resultType="KilledInfo">
         SELECT
             ki.product_id,
@@ -24,9 +27,9 @@
             r.end_time "repo.endTime",
             r.create_time "repo.createTime"
         FROM killed_info ki
-            INNER JOIN repo r ON ki.product_id = r.product_id
-        WHERE ki.product_id = #{product_id}
-        AND ki.user_phone = #{user_phone};
+          INNER JOIN repo r ON ki.product_id = r.product_id
+            WHERE ki.product_id = #{product_id}
+                 AND ki.user_phone = #{user_phone};
     </select>
 
 </mapper>
