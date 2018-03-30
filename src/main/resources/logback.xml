@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--【logbacl配置文件】-->
 <configuration debug = "true">
-
+    <!--标准输出-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-
         <encoder>
             <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
         </encoder>
-
     </appender>
 
+    <!--全局-->
     <root level="debug">
         <appender-ref ref="STDOUT" />
     </root>
-
 </configuration>
