@@ -1,14 +1,9 @@
 package org.seckill.dto;
-
-/**
- * @author cherry
- * @date 2017/12/7 16:23
- */
-
 /**
  * 暴露秒杀地址url
  */
-public class Exposure {
+public class Exposure
+{
 
     private long productId;
     /**
@@ -18,8 +13,8 @@ public class Exposure {
     private boolean exposed;
 
     /**
-     *  加密后的地址
-    */
+     * 加密后的地址
+     */
     private String md5;
 
     /**
@@ -37,13 +32,15 @@ public class Exposure {
      */
     private long end;
 
-    public Exposure(long productId, boolean exposed, String md5) {
+    public Exposure(long productId, boolean exposed, String md5)
+    {
         this.productId = productId;
         this.exposed = exposed;
         this.md5 = md5;
     }
 
-    public Exposure(long productId, boolean exposed, long now, long start, long end) {
+    public Exposure(long productId, boolean exposed, long now, long start, long end)
+    {
         this.productId = productId;
         this.exposed = exposed;
         this.now = now;
@@ -51,61 +48,75 @@ public class Exposure {
         this.end = end;
     }
 
-    public Exposure(long productId, boolean exposed) {
+    public Exposure(long productId, boolean exposed)
+    {
         this.productId = productId;
         this.exposed = exposed;
     }
 
-    public long getProductId() {
+    public long getProductId()
+    {
         return productId;
     }
 
-    public void setProductId(long productId) {
+    public void setProductId(long productId)
+    {
         this.productId = productId;
     }
 
-    public boolean isExposed() {
+    public boolean isExposed()
+    {
         return exposed;
     }
 
-    public void setExposed(boolean exposed) {
+    public void setExposed(boolean exposed)
+    {
         this.exposed = exposed;
     }
 
-    public String getMd5() {
+    public String getMd5()
+    {
         return md5;
     }
 
-    public void setMd5(String md5) {
+    public void setMd5(String md5)
+    {
         this.md5 = md5;
     }
 
-    public long getNow() {
+    public long getNow()
+    {
         return now;
     }
 
-    public void setNow(long now) {
+    public void setNow(long now)
+    {
         this.now = now;
     }
 
-    public long getStart() {
+    public long getStart()
+    {
         return start;
     }
 
-    public void setStart(long start) {
+    public void setStart(long start)
+    {
         this.start = start;
     }
 
-    public long getEnd() {
+    public long getEnd()
+    {
         return end;
     }
 
-    public void setEnd(long end) {
+    public void setEnd(long end)
+    {
         this.end = end;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Exposure{" +
                 "productId=" + productId +
                 ", exposed=" + exposed +
